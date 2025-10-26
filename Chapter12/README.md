@@ -27,11 +27,11 @@ class MyPanel extends JPanel {
 
 - 좌표 체계: (0,0) 기준 왼쪽 상단
 
-- 문자열 출력: drawString(String str, int x, int y)
+- 문자열 출력: `drawString(String str, int x, int y)`
 
-- 색상 설정: setColor(Color c)
+- 색상 설정: `setColor(Color c)`
 
-- 폰트 설정: setFont(Font f)
+- 폰트 설정: `setFont(Font f)`
 
 ```java
 Font f = new Font("Arial", Font.ITALIC, 30);
@@ -43,54 +43,64 @@ g.drawString("Hello, Java!", 30, 30);
 ## 🟢 3. 도형 그리기와 칠하기 (Shapes and Fills)
 ### 도형 메소드
 
-drawRect(), drawOval(), drawArc(), drawPolygon()
+- `drawRect()`, `drawOval()`, `drawArc()`, `drawPolygon()`
 
-fillRect(), fillOval(), fillArc(), fillPolygon()
+- `fillRect()`, `fillOval()`, `fillArc()`, `fillPolygon()`
 
+```java
 g.setColor(Color.BLUE);
 g.fillRect(10, 10, 50, 50);
+```
 
-🖼️ 4. 이미지 그리기 (Drawing Images)
-두 가지 방식
+## 🖼️ 4. 이미지 그리기 (Drawing Images)
+### 두 가지 방식
 
-JLabel + ImageIcon
+1. JLabel + ImageIcon
 
-간단하지만 크기 조절 불가.
+- 간단하지만 크기 조절 불가.
 
-Graphics.drawImage()
+2. Graphics.drawImage()
 
-자유로운 크기 조절과 부분 이미지 가능.
+- 자유로운 크기 조절과 부분 이미지 가능.
 
+```java
 ImageIcon icon = new ImageIcon("images/image0.jpg");
 Image img = icon.getImage();
 g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+```
 
-✂️ 5. 클리핑 (Clipping)
+## ✂️ 5. 클리핑 (Clipping)
 
-특정 영역만 그리기 가능.
+- 특정 영역만 그리기 가능.
 
+```java
 g.setClip(100, 20, 150, 150);
 g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+```
 
+- `clipRect()`를 여러 번 호출하면 교집합 영역으로 축소됨.
 
-clipRect()를 여러 번 호출하면 교집합 영역으로 축소됨.
+## 🔄 6. 스윙의 페인팅 메커니즘
+### 페인팅 호출 구조
 
-🔄 6. 스윙의 페인팅 메커니즘
-페인팅 호출 구조
+```java
 paint(Graphics g) {
     paintComponent(g);  // 내부 모양
     paintBorder(g);     // 테두리
     paintChildren(g);   // 자식 컴포넌트
 }
+```
 
-repaint() & revalidate()
+### repaint() & revalidate()
 
-repaint() : 컴포넌트를 다시 그림.
+- `repaint()` : 컴포넌트를 다시 그림.
 
-revalidate() : 배치관리자에게 컴포넌트 재배치 요청.
+- `revalidate()` : 배치관리자에게 컴포넌트 재배치 요청.
 
-🖱️ 예제: 마우스로 선 그리기
+## 🖱️ 예제: 마우스로 선 그리기
+```java
 addMouseListener(new MouseAdapter() {
     public void mousePressed(MouseEvent e) { vStart.add(e.getPoint()); }
     public void mouseReleased(MouseEvent e) { vEnd.add(e.getPoint()); repaint(); }
 });
+```
