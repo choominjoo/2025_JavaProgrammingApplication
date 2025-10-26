@@ -20,21 +20,25 @@ class MyPanel extends JPanel {
         g.drawRect(10, 10, 50, 50);
     }
 }
-🖌️ 2. Graphics 클래스
-주요 기능
+'''
 
-좌표 체계: (0,0) 기준 왼쪽 상단
+## 🖌️ 2. Graphics 클래스
+### 주요 기능
 
-문자열 출력: drawString(String str, int x, int y)
+- 좌표 체계: (0,0) 기준 왼쪽 상단
 
-색상 설정: setColor(Color c)
+- 문자열 출력: drawString(String str, int x, int y)
 
-폰트 설정: setFont(Font f)
+- 색상 설정: setColor(Color c)
 
+- 폰트 설정: setFont(Font f)
+
+```java
 Font f = new Font("Arial", Font.ITALIC, 30);
 g.setFont(f);
 g.setColor(Color.RED);
 g.drawString("Hello, Java!", 30, 30);
+'''
 
 🟢 3. 도형 그리기와 칠하기 (Shapes and Fills)
 도형 메소드
