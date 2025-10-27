@@ -12,7 +12,6 @@ public class GraphicsDrawStringEx extends JFrame {
         setSize(250, 200);
         setVisible(true);
     }
-
     //JPanel을 상속받는 새 패널 작성
     class MyPanel extends JPanel {
         public void paintComponent(Graphics g) {
@@ -26,3 +25,4 @@ public class GraphicsDrawStringEx extends JFrame {
     }
     
 }
+
