@@ -12,7 +12,6 @@ public class GraphicsColorFontEx extends JFrame {
         setSize(350, 470);
         setVisible(true);
     }
-
     class MyPanel extends JPanel {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -28,7 +27,6 @@ public class GraphicsColorFontEx extends JFrame {
             }
         }
     }
-
     public static void main(String[] args) {
         new GraphicsColorFontEx();
     }
