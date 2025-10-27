@@ -11,7 +11,6 @@ public class paintJPanelEx extends JFrame {
         setSize(250, 220);
         setVisible(true);
     }
-
     //JPanel을 상속받는 새 패널 구현
     class MyPanel extends JPanel {
         public void paintComponent(Graphics g) {
