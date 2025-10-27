@@ -21,7 +21,6 @@ public class GraphicsDrawStringEx extends JFrame {
             g.drawString("얼마나? 하늘만큼 땅만큼 !!!!", 60, 60); //(60, 60) 위치에 문자열 출력
         }
     }
-
     public static void main(String[] args) {
         new GraphicsDrawStringEx();
     }
