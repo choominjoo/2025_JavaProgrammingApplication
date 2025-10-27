@@ -23,7 +23,6 @@ public class paintJPanelEx extends JFrame {
             g.drawRect(90, 90, 50, 50); //(90, 90) 위치에 50x50 크기의 사각형 그리기
         }
     }
-
     public static void main(String[] args) {
         new paintJPanelEx();
     }
